@@ -43,7 +43,7 @@ class WrappedEnv(OpenAIGym):
             self.gym.render()
 
         obs = self.gym.get_observations()
-        all_actions = self.gym.act(obs)
+        all_actions = self.gym._act(obs)
         all_actions.insert(self.gym.training_agent, actions)
         state, reward, terminal, _ = self.gym.step(all_actions)
         agent_state = self.gym.featurize(state[self.gym.training_agent])

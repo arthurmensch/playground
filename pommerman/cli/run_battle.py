@@ -60,7 +60,7 @@ def run(args, num_times=1, seed=None):
                     record_pngs_dir=record_pngs_dir,
                     record_json_dir=record_json_dir,
                     do_sleep=do_sleep)
-            actions = env.act(obs)
+            actions = env._act(obs)
             obs, reward, done, info = env.step(actions)
 
         print("Final Result: ", info)

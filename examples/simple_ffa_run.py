@@ -28,7 +28,7 @@ def main():
         done = False
         while not done:
             env.render()
-            actions = env.act(state)
+            actions = env._act(state)
             state, reward, done, info = env.step(actions)
         print('Episode {} finished'.format(i_episode))
     env.close()
