@@ -71,7 +71,7 @@ class Pomme(v0.Pomme):
         min_obs.extend([0] * self._radio_vocab_size * self._radio_num_words)
         max_obs.extend([1] * self._radio_vocab_size * self._radio_num_words)
         self.observation_space = spaces.Box(
-            np.array(min_obs), np.array(max_obs))
+            np.array(min_obs), np.array(max_obs), dtype=np.float32)
 
     def get_observations(self):
         observations = super().get_observations()

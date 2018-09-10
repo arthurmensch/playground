@@ -94,7 +94,7 @@ class Pomme(gym.Env):
         max_obs += [self._board_size] * 2 + [self._num_items] * 2 + [1]
         max_obs += [constants.Item.Agent3.value] * 4
         self.observation_space = spaces.Box(
-            np.array(min_obs), np.array(max_obs))
+            np.array(min_obs), np.array(max_obs), dtype=np.float32)
 
     def set_agents(self, agents):
         self._agents = agents
